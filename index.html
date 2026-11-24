@@ -120,7 +120,7 @@ p { margin: 0; }
 .cover .ph { position: absolute; inset: 0; z-index: -2; }
 .cover .ph.has-img { background: #000; }
 .cover .ph .ph-img { background-repeat: no-repeat; }
-@media (max-height: 700px) { .cover .ph .ph-img { background-size: auto 70% !important; } }
+@media (max-height: 700px) { .cover .ph .ph-img { background-size: min(100%, 46.67dvh) auto !important; } }
 .cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(0,0,0,.94) 16%, rgba(0,0,0,.45) 40%, transparent 60%); }
 .cover.gone { transform: translateY(-100%); opacity: 0; pointer-events: none; }
 .cover .to { margin-top: 32px; font-size: 11px; letter-spacing: .1em; }
@@ -635,7 +635,7 @@ form .submit.loading::after { content: ""; position: absolute; inset: 0; margin:
    Foto: isi path/URL gambar (mis. "img/cover.jpg"). Kosongkan "" untuk placeholder.
    ===================================================================== */
 const CONFIG = {
-  groom: { nick: "Yoga", full: "Yoga Refnu Pangestu", order: "Putra dari", parents: "Bapak Saefudin (Alm.) & Ibu Inih Tarsinih (Almh.)", ig: "", photo: { src: "img/yoga.jpg", pos: "36% 18%", size: "175%" } },
+  groom: { nick: "Yoga", full: "Yoga Refnu Pangestu", order: "Putra dari", parents: "Bapak Saefudin (Alm.) & Ibu Inih Tarsinih (Almh.)", ig: "", photo: { src: "img/yoga.jpg", pos: "50% 18%" } },
   bride: { nick: "Sifa", full: "Sifa Silfia Annurburhan", order: "Putri dari", parents: "Bapak Burhanudin & Ibu Yulianis", ig: "", photo: { src: "img/sifa.jpg", pos: "45% 20%" } },
   brideFirst: true, // urutan tampil: mempelai wanita dulu (seperti referensi)
 
@@ -666,7 +666,7 @@ const CONFIG = {
 
   // Foto: path string, atau { src, pos, size } — pos = titik fokus, size = zoom (mis. "150%")
   photos: {
-    cover: { src: "img/cover-siluet.jpg", pos: "50% 0%", size: "auto 84%" }, // black-background photo: shrunk so the circle sits above the text
+    cover: { src: "img/cover-siluet.jpg", pos: "50% 0%", size: "min(100%, 56dvh) auto" }, // keep the circle above the text and within the viewport
     side:  { src: "img/siluet-1.jpg", pos: "60% 40%" },
     hero:  { src: "img/berdua.jpg",   pos: "56% 30%" },
     story: { src: "img/lingkaran.jpg", pos: "50% 52%" },
@@ -677,8 +677,8 @@ const CONFIG = {
     { src: "img/siluet-1.jpg", pos: "60% 40%", wide: true },
     "img/berdua.jpg", "img/sifa.jpg",
     { src: "img/lingkaran.jpg", pos: "50% 55%", wide: true },
-    "img/yoga.jpg", { src: "img/koran.jpg", pos: "50% 45%" },
-    { src: "img/siluet-2.jpg", pos: "70% 40%", wide: true }
+    "img/yoga.jpg", { src: "img/candid.jpg", pos: "50% 45%" },
+    { src: "img/siluet-2.jpg", pos: "50% 40%", wide: true }
   ],
   // Musik: taruh file mp3 di folder audio/ dengan nama ini. Jika file tidak ada, tombol musik otomatis disembunyikan.
   music: "audio/jatuh-suka.mp3",
